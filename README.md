@@ -14,21 +14,33 @@ encounter a bug, please report it in the GitHub issue tracker at
 An example usage of the SHA256 module is:
 
 >>> from Crypto.Hash import SHA256
+
 >>> hash = SHA256.new()
+
 >>> hash.update('message')
+
 >>> hash.digest()
+
 '\xabS\n\x13\xe4Y\x14\x98+y\xf9\xb7\xe3\xfb\xa9\x94\xcf\xd1\xf3\xfb"\xf7\x1c\xea\x1a\xfb\xf0+F\x0cm\x1d'
 
 An example usage of an encryption algorithm (AES, in this case) is:
 
 >>> from Crypto.Cipher import AES
+
 >>> obj = AES.new('This is a key123', AES.MODE_CBC, 'This is an IV456')
+
 >>> message = "The answer is no"
+
 >>> ciphertext = obj.encrypt(message)
+
 >>> ciphertext
+
 '\xd6\x83\x8dd!VT\x92\xaa`A\x05\xe0\x9b\x8b\xf1'
+
 >>> obj2 = AES.new('This is a key123', AES.MODE_CBC, 'This is an IV456')
+
 >>> obj2.decrypt(ciphertext)
+
 'The answer is no'
 
 One possible application of the modules is writing secure
@@ -44,15 +56,20 @@ As of PyCrypto 2.1.0, PyCrypto provides an easy-to-use random number
 generator:
 
 >>> from Crypto import Random
+
 >>> rndfile = Random.new()
+
 >>> rndfile.read(16)
+
 '\xf7.\x838{\x85\xa0\xd3>#}\xc6\xc2jJU'
 
 A stronger version of Python's standard "random" module is also
 provided:
 
 >>> from Crypto.Random import random
+
 >>> random.choice(['dogs', 'cats', 'bears'])
+
 'bears'
 
 Caveat: For the random number generator to work correctly, you must
@@ -103,12 +120,15 @@ PyCrypto website:
     https://www.dlitz.net/software/pycrypto/
 
 
-Compile(Python3.6)
-==================
+Build by hex-in (Python3.6)
+=============================
 
 Windows command line:
+
 set CL=/FI "%VCINSTALLDIR%\INCLUDE\stdint.h"
 
 USER PATH:
+
 Variable name  : VCINSTALLDIR
+
 Variable value : C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC

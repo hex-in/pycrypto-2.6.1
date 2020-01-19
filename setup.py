@@ -44,6 +44,8 @@ from distutils.command.build_ext import build_ext
 import os, sys, re
 import struct
 
+from setuptools import setup, find_packages, Extension
+
 if sys.version[0:1] == '1':
     raise RuntimeError ("The Python Cryptography Toolkit requires "
                          "Python 2.x or 3.x to build.")
